@@ -1,6 +1,6 @@
 Achiever = Achiever or {}
 
-Achiever.version = "1.1.0"
+Achiever.version = "1.1.1"
 Achiever.lastNotifiedVersion = nil
 Achiever.playerName = UnitName("player") or "Unknown"
 
@@ -61,16 +61,3 @@ f:SetScript("OnEvent", function(_, _, prefix, msg, channel, sender)
         end
     end
 end)
-
--- Slash command for manual version broadcast
-SLASH_ACHIEVER1 = "/achiever"
-SlashCmdList["ACHIEVER"] = function(msg)
-    msg = msg:lower()
-    if msg == "version" then
-        print("|cffaaff00Achiever|r v" .. Achiever.version .. " broadcasting version...")
-        Achiever.Achiever_BroadcastVersion()
-    else
-        print("|cffaaff00Achiever|r commands:")
-        print("  /achiever version - broadcast your addon version")
-    end
-end
