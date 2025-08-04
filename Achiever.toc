@@ -1,6 +1,6 @@
 ## Interface: 30300
 ## Title: Achiever
-## Notes: Dev Version
+## Notes: No more missing your Achievements!
 ## Author: Manaproblem
 ## Version: 1
 ## DefaultState: Enabled
