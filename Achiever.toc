@@ -1,0 +1,18 @@
+## Interface: 30300
+## Title: Achiever
+## Notes: Dev Version
+## Author: Manaproblem
+## Version: 1
+## DefaultState: Enabled
+## SavedVariables: AchieverSettings
+
+savehandler.lua
+
+# Toast Pop-up
+Toast\toast.lua
+
+# Main Functions
+main.lua
+rareAchievs.lua
+sounds.lua
+
