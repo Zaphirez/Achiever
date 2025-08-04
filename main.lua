@@ -1,6 +1,7 @@
 -- ======================
 --  Achiever - Main File
 -- ======================
+Achiever = Achiever or {}
 
 local f = CreateFrame("Frame")
 local timerFrame = CreateFrame("Frame")
@@ -88,11 +89,16 @@ SlashCmdList["ACHIEVER"] = function(msg)
 
     elseif cmd == "status" then
         print("Toast is currently " .. (Achiever.IsToastEnabled() and "enabled." or "disabled."))
-
+    
+    elseif cmd == "version" then
+        print("|cffaaff00Achiever|r v" .. version .. " broadcasting version...")
+        Achiever.Achiever_BroadcastVersion()
+    
     else
         print("|cffffd700Achiever Addon Commands:")
         print("|cffffff00/achiever test <id>|r - Test achievement popup and sound.")
         print("|cffffff00/achiever toggle|r - Toggle achievement toast display on/off.")
         print("|cffffff00/achiever status|r - Check whether toast is enabled.")
+        print("|cffffff00/achiever version|r - broadcast your addon version")
     end
 end

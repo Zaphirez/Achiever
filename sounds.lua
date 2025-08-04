@@ -1,3 +1,4 @@
+Achiever = Achiever or {}
 local basepath = "Interface\\AddOns\\Achiever\\Sounds\\"
 local rarepath = basepath .. "Rare\\"
 local normpath = basepath .. "Normal\\"

@@ -6,13 +6,16 @@
 ## DefaultState: Enabled
 ## SavedVariables: AchieverSettings
 
+# Core - must define globals first!
+main.lua
+
+# Secondary Core Logic
 savehandler.lua
+versioncontroll.lua
 
 # Toast Pop-up
 Toast\toast.lua
 
-# Main Functions
-main.lua
+# Features
 rareAchievs.lua
 sounds.lua
-

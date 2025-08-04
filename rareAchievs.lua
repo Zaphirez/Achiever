@@ -1,3 +1,5 @@
+Achiever = Achiever or {}
+
 Achiever.RareAchievements = {
     -- Raids & Dungs
     [4602] = true, -- Glory of the Icecrown Raider 10
