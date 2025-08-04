@@ -14,11 +14,12 @@ Achiever is a lightweight World of Warcraft addon that enhances the experience o
 
 | Command              | Description                              |
 | -------------------- | ---------------------------------------- |
-| `/achievertest <id>` | Test a specific achievement by ID        |
-| `/achievertoggle`    | Toggle toast notifications on or off     |
-| `/achieverstatus`    | Check if toast notifications are enabled |
-| `/achiever version`  | Broadcasts your version to other players |
 | `/achiever`          | Show help info                           |
+| `/achiever test <id>`| Test a specific achievement by ID        |
+| `/achiever toggle`   | Toggle toast notifications on or off     |
+| `/achiever status`   | Check if toast notifications are enabled |
+| `/achiever version`  | Broadcasts your version to other players |
+
 
 ## 🔍 Recognized Rare Achievements
 
