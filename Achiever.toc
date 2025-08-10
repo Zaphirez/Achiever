@@ -2,7 +2,7 @@
 ## Title: Achiever
 ## Notes: No more missing your Achievements!
 ## Author: Manaproblem
-## Version: 1
+## Version: 1.2.0
 ## DefaultState: Enabled
 ## SavedVariables: AchieverSettings
 

@@ -40,7 +40,7 @@ Achiever.RareAchievements = {
 
     -- Other
 
-    [1516] = true, -- Ice Mammoth
+    -- [1516] = true, -- Ice Mammoth
     [2083] = true, -- Grand Ice Mammoth
     [1956] = true, -- Higher Learning
     [1165] = true, -- My Sack is "Gigantique"

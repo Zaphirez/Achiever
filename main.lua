@@ -66,7 +66,15 @@ f:SetScript("OnEvent", function(_, event, id)
         end
 
     elseif event == "PLAYER_LOGIN" then
-        print("|cff00ff00Achiever Loaded!|r")
+        DEFAULT_CHAT_FRAME:AddMessage("|cff00ff00Achiever Loaded!|r")
+        if AchieverSettings.lastNotifiedVersion and AchieverSettings.lastNotifiedVersion ~= Achiever.version then
+            DEFAULT_CHAT_FRAME:AddMessage("Newer Version: " .. AchieverSettings.lastNotifiedVersion .. " available!")
+            DEFAULT_CHAT_FRAME:AddMessage("|cff00ff00" .. "Download it via https://github.com/Zaphirez/Achiever/releases/latest to stay up to date!")
+        end
+        
+        if AchieverSettings.lastNotifiedVersion and not IsNewerVersion(Achiever.version, AchieverSettings.lastNotifiedVersion) then
+            AchieverSettings.lastNotifiedVersion = nil
+        end
     end
 end)
 
@@ -81,8 +89,7 @@ SlashCmdList["ACHIEVER"] = function(msg)
 
     if cmd == "test" and tonumber(arg) then
         local id = tonumber(arg)
-        local player = UnitName("player")
-        f:GetScript("OnEvent")(f, "ACHIEVEMENT_EARNED", id, player)
+        f:GetScript("OnEvent")(f, "ACHIEVEMENT_EARNED", id, Achiever.playerName)
 
     elseif cmd == "toggle" and Achiever.ToggleToast then
         Achiever.ToggleToast()
@@ -90,15 +97,19 @@ SlashCmdList["ACHIEVER"] = function(msg)
     elseif cmd == "status" and Achiever.IsToastEnabled then
         print("Toast is currently " .. (Achiever.IsToastEnabled() and "enabled." or "disabled."))
 
-    elseif cmd == "version" and Achiever.Achiever_BroadcastVersion then
+    elseif cmd == "version" then
         print("|cffaaff00Achiever|r v" .. Achiever.version .. " broadcasting version...")
-        Achiever.Achiever_BroadcastVersion()
+        Achiever:Broadcast("VERSION:" .. Achiever.version)
+    
+    elseif cmd == "check" then
+        Achiever:SendVersionCheck()
 
     else
         print("|cffffd700Achiever Addon Commands:")
         print("|cffffff00/achiever test <id>|r - Test achievement popup and sound.")
         print("|cffffff00/achiever toggle|r - Toggle achievement toast display on/off.")
         print("|cffffff00/achiever status|r - Check whether toast is enabled.")
+        print("|cffffff00/achiever check|r - Asks players for their current version.")
         print("|cffffff00/achiever version|r - Broadcast your addon version.")
     end
 end
