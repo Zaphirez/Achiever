@@ -2,15 +2,20 @@
 ## Title: Achiever
 ## Notes: No more missing your Achievements!
 ## Author: Manaproblem
-## Version: 1.2.0
+## Version: 1.3.0
 ## DefaultState: Enabled
 ## SavedVariables: AchieverSettings
+
+#Utilities
+utils.lua
+
+# Savestates
+savehandler.lua
 
 # Core - must define globals first!
 main.lua
 
 # Secondary Core Logic
-savehandler.lua
 versioncontroll.lua
 
 # Toast Pop-up
@@ -19,3 +24,6 @@ Toast\toast.lua
 # Features
 rareAchievs.lua
 sounds.lua
+
+# Setting UI
+Settings.lua
