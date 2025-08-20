@@ -2,16 +2,18 @@
 --  Achiever Defaults
 -- ============================
 
+---@class Achiever
 Achiever = Achiever or {}
 
 --- Initializes the Default Settings stored ClientSide
 function Achiever:InitDefaults()
 	-- Version / Player info
-	self.version = "1.3.0"
+	self.version = "1.3.1"
 	self.playerName = self.playerName or UnitName("player")
 	self.pendingChecks = self.pendingChecks or {}
 
 	-- Saved variables
+	---@class AchieverSettings
 	AchieverSettings = AchieverSettings or {}
 	AchieverSettings.lastNotifiedVersion = AchieverSettings.lastNotifiedVersion or nil
 	AchieverSettings.soundEnabled = AchieverSettings.soundEnabled or true
@@ -40,11 +42,13 @@ end
 -- ============================
 
 --- Return Function for Toast State
+--- @return boolean
 Achiever.IsToastEnabled = function()
 	return AchieverSettings.showToast ~= false
 end
 
 --- Return Function for Sound State
+--- @return boolean
 Achiever.IsSoundEnabled = function()
 	return AchieverSettings.soundEnabled ~= false
 end
